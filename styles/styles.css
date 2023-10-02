@@ -1,0 +1,37 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    max-width: 80%;
+    background-color: violet;
+    padding: 34px;
+    margin: auto;
+}
+
+.container h3, p {
+    text-align: center;
+}
+
+input, textarea {
+    width: 80%;
+    margin: 11px 0px;
+    padding: 7px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn {
+    color: white;
+    background-color: purple;
+    padding: 4px;
+    border-radius: 10px;
+}
