@@ -55,23 +55,28 @@ form {
     <script src="./scripts/index.js"></script>
 <?php
     if (isset($_POST['name'])) {
-        $server = "localhost";
+        $host = "containers-us-west-103.railway.app";
+        $server = "mysql://root:v4LZnei8iHdYDGGhcc4F@containers-us-west-103.railway.app:7885/railway";
+        $dbname = "railway";
         $username = "root";
-        $password = "";
+        $password = "v4LZnei8iHdYDGGhcc4F";
+        $port = 7885;
     
-        $con = mysqli_connect($server, $username, $password);
+        $con = mysqli_connect($host, $username, $password, $dbname, $port);
+
     
         if (!$con) {
             die("Connection to this database failed due to" . mysqli_connect_error());
         }
         else {
+            echo 'Succesfuuly Connected';
             $name = $_POST['name'];
             $gender = $_POST['gender'];
             $age = $_POST['age'];
             $email = $_POST['email'];
             $phone = $_POST['phone'];
             $desc = $_POST['desc'];
-            $sql = "INSERT INTO `trip`.`trip` (`name`, `age`, `gender`, `email`, `phone`, `other`, `date`) VALUES ('$name', '$age', '$gender', '$email', '$phone', '$desc', current_timestamp());";
+            $sql = "INSERT INTO `railway`.`trip` (`name`, `age`, `gender`, `email`, `phone`, `other`, `date`) VALUES ('$name', '$age', '$gender', '$email', '$phone', '$desc', current_timestamp());";
     
             echo $sql;
     
